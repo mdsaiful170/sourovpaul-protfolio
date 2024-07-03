@@ -53,7 +53,7 @@
 
   /* footer my btn-box */
   .my_btn {
-    @apply relative hover:text-whiteColor duration-500;
+    @apply relative duration-500 hover:text-whiteColor;
   }
   .my_btn::before {
     @apply content-[''] -z-10 absolute left-0 top-0 origin-right w-full h-full right-0 scale-x-0 bg-gradient-to-r from-darkBodyColor to-primaryColorLight ease-in-out transition-transform rounded-sm duration-500;
