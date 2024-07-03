@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply !scroll-smooth scroll-mt-5 text-[85.5%];
+  }
+
+  body {
+    @apply dark:bg-darkBodyColor dark:text-textColor font-poppins overflow-x-hidden tracking-wider text-primaryColor;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-bold dark:text-textColor  lg:dark:text-whiteColor text-whiteColor lg:text-primaryColor;
+  }
+
+  .nav-link::before {
+    @apply content-['']  bg-gradient-to-r from-primaryColor to-primaryColorLight h-[3px] rounded-r-lg w-full left-0 -bottom-[5px] scale-x-0 transition-transform ease-in-out origin-right duration-500 absolute;
+  }
+  .active::before,
+  .nav-link:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+  .btn {
+    @apply px-7 py-3  flex items-center justify-center rounded-full  bg-gradient-to-l font-bold relative text-whiteColor from-primaryColor to-primaryColorLight;
+  }
+  .btn::before {
+    @apply content-[''] absolute h-[100%] w-[100%] left-0 right-0 bg-gradient-to-l from-primaryColor to-primaryColorLight ease-in-out rounded-full scale-x-0 origin-right transition-transform duration-500;
+  }
+  .btn:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+
+  section {
+    @apply py-16 md:pt-28 md:pb-20;
+  }
+  .title,
+  .subtitle {
+    @apply text-4xl md:text-5xl inline-block font-bold lg:text-6xl xl:text-7xl text-transparent bg-clip-text from-primaryColorLight to-primaryColor bg-gradient-to-r dark:to-whiteColor pb-2;
+  }
+  .subtitle {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  .btn_outline {
+    @apply px-5 py-3 border hover:bg-primaryColorLight  text-center   hover:text-whiteColor border-primaryColorLight rounded-full  font-semibold;
+  }
+
+  /* footer my btn-box */
+  .my_btn {
+    @apply relative hover:text-whiteColor duration-500;
+  }
+  .my_btn::before {
+    @apply content-[''] -z-10 absolute left-0 top-0 origin-right w-full h-full right-0 scale-x-0 bg-gradient-to-r from-darkBodyColor to-primaryColorLight ease-in-out transition-transform rounded-sm duration-500;
+  }
+  .my_btn:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@layer utilities {
+  .social-icon {
+    @apply text-primaryColorLight border border-primaryColorLight w-10 h-10 grid place-items-center rounded-full relative text-xl hover:text-whiteColor duration-500 cursor-pointer;
+  }
+
+  .social-icon::before {
+    @apply absolute content-[''] duration-300 transition-transform bg-primaryColorLight w-full h-full z-0 transition-none ease-in-out rounded-full  inset-0 scale-0;
+  }
+  .social-icon:hover::before {
+    @apply scale-100 origin-center;
+  }
+
+  /* /media services section code  */
+  .service-items {
+    @apply flex items-center gap-3 flex-wrap  px-4 py-8  border-b border-primaryColorLight hover:bg-primaryColorLight cursor-pointer duration-300;
+  }
+
+  .service-items div p {
+    @apply duration-300;
+  }
+  .service-items:hover div p {
+    @apply text-whiteColor;
+  }
+  .service-items div .i {
+    @apply duration-300;
+  }
+  .service-items:hover div .i {
+    @apply text-whiteColor -rotate-90;
+  }
+  .indicator {
+    transition: left 0.4s;
+  }
+
+  .work_card > div {
+    @apply duration-500;
+  }
+  .work_card div .i {
+    @apply duration-300 delay-300;
+  }
+  .work_card:hover .bt {
+    @apply bottom-0;
+  }
+  .work_card:hover div .i {
+    @apply -rotate-45;
+  }
+
+  /* ///experience code  */
+
+  .exp_card_box > p {
+    @apply duration-300;
+  }
+
+  .exp_card_box:hover > p {
+    @apply text-whiteColor;
+  }
+
+  @media (min-width: 480px) {
+    html {
+      @apply text-[70%];
+    }
+  }
+  @media (min-width: 768px) {
+    html {
+      @apply text-[85%];
+    }
+  }
+  @media (min-width: 997px) {
+    html {
+      @apply text-[90%];
+    }
+  }
+  @media (min-width: 1024px) {
+    html {
+      @apply text-[95%];
+    }
+  }
+  @media (min-width: 1440px) {
+    html {
+      @apply text-[100%];
+    }
+  }
+}
